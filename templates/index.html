@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyBot AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <div class="bg-mesh"></div>
+    <div class="bg-grid"></div>
+    <div class="particles" id="particles"></div>
+
+    <div class="app">
+
+        <header class="header">
+            <div class="logo">
+                <div class="logo-orb">🎓</div>
+                <span class="logo-name">StudyBot</span>
+                <span class="logo-tag">AI</span>
+            </div>
+            <div class="model-pill">
+                <span class="live-dot"></span>
+                <span class="model-name">Llama 3.1 · Live</span>
+            </div>
+        </header>
+
+        <div class="chat-body" id="chat-body">
+            <div class="welcome" id="welcome">
+                <div class="welcome-emoji">🚀</div>
+                <h2 class="welcome-title">What will you learn today?</h2>
+                <p class="welcome-desc">Your AI-powered study companion. Ask questions, solve problems, explore any topic — instantly.</p>
+                <div class="chips">
+                    <button class="chip chip-1" onclick="fillChip(this)">⚡ Explain quantum physics</button>
+                    <button class="chip chip-2" onclick="fillChip(this)">🧮 Solve: x² + 5x = 14</button>
+                    <button class="chip chip-3" onclick="fillChip(this)">🌿 What is photosynthesis?</button>
+                    <button class="chip chip-4" onclick="fillChip(this)">📜 Summarize World War II</button>
+                    <button class="chip chip-5" onclick="fillChip(this)">🧬 Explain DNA replication</button>
+                    <button class="chip chip-6" onclick="fillChip(this)">🏛️ What caused Rome's fall?</button>
+                </div>
+            </div>
+            <div id="chat-box"></div>
+        </div>
+
+        <div class="input-zone">
+            <div class="input-row">
+                <input id="question" type="text" placeholder="Ask me anything…" autocomplete="off"
+                    onkeydown="if(event.key==='Enter') sendQuestion()" />
+                <button id="send-btn" onclick="sendQuestion()" aria-label="Send">➤</button>
+            </div>
+            <div class="input-footer">
+                <span class="hint">Press <kbd>Enter</kbd> to send</span>
+                <span class="powered">⚡ Powered by Groq</span>
+                <span class="powered"> Made by Abhishek</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

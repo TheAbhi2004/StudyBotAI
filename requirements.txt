@@ -1,0 +1,9 @@
+flask   # Used to build the backend server
+groq    # Used to call LLM models like Llama3
+mysql-connector-python   # Used to connect Flask -> MySQL database
+python-dotenv   # Loads environment variables from .env 
+PyPDF2    # Used to extract text from uploaded PDFs
+langchain    # Helps build RAG systems easily 
+tiktoken   # Used for token counting when sending prompts to LLMs 
+faiss-cpu   # Used for vector database search 
+sentence-transformers   # Used to create embeddings for text search 
