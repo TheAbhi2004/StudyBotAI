@@ -1,13 +1,9 @@
-/* =====================
-   RESET & BASE
-   ===================== */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; overflow: hidden; }
 body { cursor: none; }
 
-/* =====================
-   CUSTOM CURSOR
-   ===================== */
+
 #cursor 
 {
     position: fixed; width: 10px; height: 10px;
@@ -23,9 +19,7 @@ body { cursor: none; }
     transition: all 0.18s ease;
 }
 
-/* =====================
-   ROOT PALETTE — warm dark
-   ===================== */
+
 :root {
     --bg:         #1a1714;       /* warm near-black */
     --surface:    #242019;       /* card background */
@@ -51,9 +45,7 @@ body {
     justify-content: center;
 }
 
-/* =====================
-   BACKGROUND
-   ===================== */
+
 .bg-mesh 
 {
     position: fixed; inset: 0; z-index: 0;
@@ -90,9 +82,6 @@ body {
     100% { transform: translateY(-10vh); opacity: 0; }
 }
 
-/* =====================
-   APP SHELL
-   ===================== */
 .app 
 {
     position: relative; z-index: 10;
@@ -108,7 +97,7 @@ body {
         0 32px 80px rgba(0,0,0,0.5);
 }
 
-/* Subtle warm top border */
+
 .app::before 
 {
     content: '';
@@ -124,9 +113,7 @@ body {
     100% { background-position: 200% 0%; }
 }
 
-/* =====================
-   HEADER
-   ===================== */
+
 .header 
 {
     display: flex; align-items: center; justify-content: space-between;
@@ -191,9 +178,6 @@ body {
     font-family: var(--mono); font-size: 10px; color: var(--text-dim); 
 }
 
-/* =====================
-   CHAT BODY
-   ===================== */
 .chat-body 
 {
     flex: 1; overflow-y: auto;
@@ -240,9 +224,7 @@ body {
     max-width: 360px; line-height: 1.7; margin-bottom: 28px;
 }
 
-/* =====================
-   SUGGESTION CHIPS
-   ===================== */
+
 .chips {
     display: flex; flex-wrap: wrap;
     gap: 8px; justify-content: center; max-width: 500px;
@@ -273,9 +255,6 @@ body {
 .chip-5:hover { border-color: rgba(180,130,180,0.5); color: #b482b4; }
 .chip-6:hover { border-color: rgba(130,170,200,0.5); color: #82aac8; }
 
-/* =====================
-   MESSAGES
-   ===================== */
 #chat-box { display: flex; flex-direction: column; gap: 16px; }
 
 .msg-row {
@@ -308,9 +287,6 @@ body {
     border-bottom-left-radius: 4px;
 }
 
-/* =====================
-   TYPING INDICATOR
-   ===================== */
 .typing-bubble {
     display: flex; align-items: center; gap: 5px;
     padding: 14px 18px;
@@ -331,9 +307,6 @@ body {
     30%          { transform: translateY(-7px); }
 }
 
-/* =====================
-   INPUT ZONE
-   ===================== */
 .input-zone {
     padding: 14px 24px 18px;
     border-top: 1px solid var(--border);
@@ -388,9 +361,6 @@ kbd {
 }
 .powered { font-family: var(--mono); font-size: 10px; color: var(--accent); opacity: 0.7; }
 
-/* =====================
-   RESPONSIVE
-   ===================== */
 @media (max-width: 720px) {
     .app { width: 100vw; height: 100vh; max-height: 100vh; border-radius: 0; }
 }

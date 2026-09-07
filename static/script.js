@@ -1,6 +1,3 @@
-/* =====================
-   CUSTOM CURSOR
-   ===================== */
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -30,9 +27,6 @@ document.querySelectorAll('button, input, .chip').forEach(el => {
     });
 });
 
-/* =====================
-   FLOATING PARTICLES
-   ===================== */
 const COLORS = ['#c9844a','#7b8cbc','#7a9e7e','#bc9664','#b482b4','#82aac8'];
 const pc = document.getElementById('particles');
 
@@ -52,9 +46,6 @@ for (let i = 0; i < 28; i++) {
     pc.appendChild(p);
 }
 
-/* =====================
-   SUGGESTION CHIPS
-   ===================== */
 function fillChip(btn) {
     // Strip leading emoji + space from chip text
     const text = btn.textContent.replace(/^[\S]+\s/, '').trim();
@@ -62,9 +53,7 @@ function fillChip(btn) {
     sendQuestion();
 }
 
-/* =====================
-   WELCOME SCREEN
-   ===================== */
+
 function hideWelcome() {
     const w = document.getElementById('welcome');
     if (!w) return;
@@ -74,9 +63,7 @@ function hideWelcome() {
     setTimeout(() => w.remove(), 300);
 }
 
-/* =====================
-   MESSAGE HELPERS
-   ===================== */
+
 function appendMessage(role, text) {
     const chatBox = document.getElementById('chat-box');
     const row     = document.createElement('div');
