@@ -47,7 +47,6 @@ for (let i = 0; i < 28; i++) {
 }
 
 function fillChip(btn) {
-    // Strip leading emoji + space from chip text
     const text = btn.textContent.replace(/^[\S]+\s/, '').trim();
     document.getElementById('question').value = text;
     sendQuestion();
@@ -69,7 +68,7 @@ function appendMessage(role, text) {
     const row     = document.createElement('div');
     row.className = `msg-row ${role}`;
     row.innerHTML = `
-        <div class="av ${role}">${role === 'user' ? '🧑' : '🤖'}</div>
+        <div class="av ${role}">${role === 'user' ? '' : ''}</div>
         <div class="bubble ${role}">${text}</div>
     `;
     chatBox.appendChild(row);
@@ -82,7 +81,7 @@ function showTyping() {
     typingRow.className = 'msg-row bot';
     typingRow.id        = 'typing';
     typingRow.innerHTML = `
-        <div class="av bot">🤖</div>
+        <div class="av bot"></div>
         <div class="typing-bubble">
             <div class="td"></div>
             <div class="td"></div>
@@ -101,9 +100,6 @@ function scrollBottom() {
     document.getElementById('chat-body').scrollTop = 99999;
 }
 
-/* =====================
-   SEND QUESTION
-   ===================== */
 async function sendQuestion() {
     const input    = document.getElementById('question');
     const sendBtn  = document.getElementById('send-btn');
@@ -132,7 +128,7 @@ async function sendQuestion() {
 
     } catch (err) {
         removeTyping();
-        appendMessage('bot', `⚠️ Something went wrong. Please try again.<br>
+        appendMessage('bot', `Something went wrong. Please try again.<br>
             <small style="opacity:0.5">${err.message}</small>`);
     }
 
