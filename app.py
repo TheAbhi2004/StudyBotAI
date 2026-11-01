@@ -27,7 +27,6 @@ def new_chat():
         "title": "New Chat"
     })
 
-
 # Get all conversations for the sidebar
 @app.route("/conversations", methods=["GET"])
 def conversations():
@@ -37,7 +36,6 @@ def conversations():
         "conversations": chats
     })
 
-
 # Load messages from a selected conversation
 @app.route("/conversation/<int:conversation_id>", methods=["GET"])
 def load_conversation(conversation_id):
@@ -46,7 +44,6 @@ def load_conversation(conversation_id):
     return jsonify({
         "messages": messages
     })
-
 
 # Ask StudyBot a question
 @app.route("/ask", methods=["POST"])
@@ -76,7 +73,6 @@ def ask():
         "answer": answer,
         "conversation_id": conversation_id
     })
-
 
 if __name__ == "__main__":
     app.run(debug=True)
