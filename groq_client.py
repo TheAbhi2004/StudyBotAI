@@ -18,6 +18,6 @@ def ask_groq(question):
         ],
         model="openai/gpt-oss-20b"
     )
-
+    
     answer = chat_completion.choices[0].message.content
     return answer
