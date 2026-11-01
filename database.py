@@ -13,7 +13,6 @@ def get_db_connection():
         database=os.getenv("DB_NAME")
     )
 
-
 # Create a new conversation
 def create_conversation(title="New Chat"):
     conn = get_db_connection()
